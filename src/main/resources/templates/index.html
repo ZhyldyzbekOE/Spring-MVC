@@ -5,9 +5,8 @@
     <title>Index</title>
 </head>
 <body>
-
 <div th:if="${people.empty}"> No users! </div>
-
+<!--<h1 th:if="${people.empty}" >No users!</h1>-->
 <div>
     <table border = "3">
         <thead>
@@ -30,11 +29,11 @@
         </tbody>
     </table>
 </div>
-
     <br/>
     <hr/>
 <p style="text-align: center">
-<button><a href="/people/new">Create new person</a></button>
+    <button><a href="/people/new">Create new person</a></button>
 </p>
+
 </body>
 </html>
