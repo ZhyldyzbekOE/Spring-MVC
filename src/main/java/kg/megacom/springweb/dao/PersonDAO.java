@@ -9,6 +9,7 @@ import java.util.List;
 public class PersonDAO {
 
     private static int PEOPLE_COUNT;
+
     private List<Person> people;
     {
         people = new ArrayList<>();

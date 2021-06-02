@@ -2,19 +2,22 @@ package kg.megacom.springweb.models;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Person {
 
     private int id;
+    @Pattern(regexp = "[a-zA-Z]*")
     @NotEmpty(message = "Имя не должнен быть пустым!")
     @Size(min = 2, max = 15, message = "Имя должно быть между 2 и 15 символов")
     private String name;
     @NotEmpty(message = "Email не должнен быть пустым!")
     @Email(message = "Введите корректно: example@example.com")
     private String email;
-//    @NotEmpty
+    @NotEmpty
     @Size(min = 8, message = "Пароль должен быть не менее 8 сиволовов")
+    @Pattern(regexp = "[a-zA-Z0-9!-&]*")
     private String password;
     private boolean isActive;
 
