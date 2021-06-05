@@ -29,20 +29,19 @@ public class PersonDAO {
     public void save(Person person){
         person.setActive(true);
         person.setId(++PEOPLE_COUNT);
-        System.out.println(person);
         people.add(person);
+        System.out.println("save "+person);
     }
 
     public void update(int id, Person updatedPerson){
         Person personToBeUpdated = show(id);
-        System.out.println("aaaaa "+personToBeUpdated);
         for (int i = 0; i < people.size(); i++){
             if (people.get(i).getId() == personToBeUpdated.getId()){
-                System.out.println("dddddd "+updatedPerson);
                 personToBeUpdated.setName(updatedPerson.getName());
                 personToBeUpdated.setEmail(updatedPerson.getEmail());
                 personToBeUpdated.setPassword(updatedPerson.getPassword());
                 personToBeUpdated.setActive(updatedPerson.isActive());
+                System.out.println("update: " + personToBeUpdated);
 //                people.remove(i);
 //                people.add(updatedPerson);
                 break;
